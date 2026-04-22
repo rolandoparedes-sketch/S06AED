@@ -1692,6 +1692,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIGameManager
   PanelMap: {fileID: 45957700}
   PanelInventory: {fileID: 853458478}
+  PanelConfig: {fileID: 487918908}
+  PanelStats: {fileID: 287825383}
   SetActive: 1
 --- !u!4 &1695822371
 Transform:
