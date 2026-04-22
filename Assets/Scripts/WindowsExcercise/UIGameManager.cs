@@ -6,9 +6,12 @@ using UnityEngine.InputSystem;
 
 public class UIGameManager : MonoBehaviour
 {
+    
+    public GameObject PanelMap;
+    public GameObject PanelInventory;
     public InputSystem_Actions inputs;
     public WindowManager wmanager = new ();
-
+    public bool SetActive = false;
     private void Awake()
     {
         inputs = new();
@@ -35,16 +38,19 @@ public class UIGameManager : MonoBehaviour
     }
     private void OnElementAdded(Window window)
     {
-        
+        window.window.SetActive(SetActive);
+     
         //->leo el contenido , lo activo y lo pongo al frente
     }
     private void OnElementRemoved(Window window)
     {
+        window.window.SetActive(false);
         //->desactivo el panel y lo mando al final
     }
 
     private void HideCurrentPanel(InputAction.CallbackContext context)
     {
+
         //->pop
         //-> verifico si la window de este pop esta activada o desactvida
         //-> si esta activa funciono normalmente
