@@ -1,16 +1,14 @@
+using TMPro;
 using UnityEngine;
 
 public class UIInventory : MonoBehaviour
 {
     public InvetoryData data;
-    void Start()
+    private void OnEnable()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(" INVENTARIO");
+        Debug.Log("HP: " + data.hp);
+        Debug.Log("STR: " + data.str);
+        Debug.Log("LIFE: " + data.life);
     }
 }

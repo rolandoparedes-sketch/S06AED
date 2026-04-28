@@ -28,16 +28,17 @@ public class MyStack<T> //->strings
 
     public virtual T Pop()
     {
-        if (top == null) 
-            throw new System.Exception("Trying to pop a empty stack");
+        if (Count == 0)
+        {
+            Debug.LogWarning("Intentaste hacer Pop en una pila vacía");
+            return default;
+        }
 
-        T tempValue = top.Value;
-      // StackNode<T> tempValue = top;
+        T value = top.Value;   
+        top = top.Next;        
+        count--;               
 
-        top = top.Next;
-        count--;
-
-        return tempValue;
+        return value;
     }
     public virtual T Peek()//-> +1  Jeremy , arribasplata, traviz 
     {

@@ -27,6 +27,7 @@ public class UIGameManager : MonoBehaviour
     }
 
 
+
     void Start()
     {
         
@@ -49,12 +50,11 @@ public class UIGameManager : MonoBehaviour
 
     private void HideCurrentPanel(InputAction.CallbackContext context)
     {
-        wmanager.Pop();
-    
-        //->pop
-        //-> verifico si la window de este pop esta activada o desactvida
-        //-> si esta activa funciono normalmente
-        //-> si ya esta desactivada hago una llamada recursiva haciendo pop hasta que encuentro uno que pueda desactivar
+        if (wmanager.Count > 0)
+        {
+            wmanager.Pop();
+        }
+
         Debug.Log("Escape");
     }
 

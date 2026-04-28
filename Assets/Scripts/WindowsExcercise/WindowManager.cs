@@ -17,14 +17,22 @@ public class WindowManager : MyStack<Window>
 
     }
 
-    public override Window Pop()//+1 jeremy , coreting , arribasplata
+    public override Window Pop()
     {
-        if (Peek().window.activeSelf == true)
-         OnElementRemoved?.Invoke(Peek());
-         return base.Pop();
+        if (Count == 0) return null;
+
+        Window top = Peek();
+
+        if (top != null && top.window.activeSelf)
+        {
+            OnElementRemoved?.Invoke(top);
+        }
+
+        if (Count == 0) return null;
+        return base.Pop();
     }
 
 
-   
+
 
 }
