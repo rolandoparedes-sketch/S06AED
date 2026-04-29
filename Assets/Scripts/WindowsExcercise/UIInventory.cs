@@ -11,4 +11,10 @@ public class UIInventory : MonoBehaviour
         Debug.Log("STR: " + data.str);
         Debug.Log("LIFE: " + data.life);
     }
+    public void BtnAddHP()
+    {
+        data.hp += 10;
+        Debug.Log("HP nuevo: " + data.hp);
+    }
+
 }
