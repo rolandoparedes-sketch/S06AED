@@ -44,8 +44,8 @@ public class UIGameManager : MonoBehaviour
     private void OnElementRemoved(Window window)
     {
         window.window.SetActive(false);
-        wmanager.Pop();
-        //->desactivo el panel y lo mando al final
+       
+    
     }
 
     private void HideCurrentPanel(InputAction.CallbackContext context)
@@ -55,7 +55,7 @@ public class UIGameManager : MonoBehaviour
             wmanager.Pop();
         }
 
-        Debug.Log("Escape");
+        Debug.Log("Saliendo");
     }
 
     public void BtnOpenPanel(GameObject panel)
